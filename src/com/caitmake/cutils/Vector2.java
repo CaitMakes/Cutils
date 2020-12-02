@@ -7,8 +7,7 @@ public class Vector2 implements CutilConstants {
     public double x;
     public double y;
 
-    public double angRads;
-    public double angDegs;
+    public Angle angle;
 
     public Vector2() {
         this(0, 0);
@@ -18,8 +17,7 @@ public class Vector2 implements CutilConstants {
         this.x = x;
         this.y = y;
 
-        this.angRads = getAngle(RADIANS);
-        this.angDegs = getAngle(DEGREES);
+        this.angle = genAngle();
     }
 
     //public Vector2(double magnitude, double angle) {
@@ -35,8 +33,12 @@ public class Vector2 implements CutilConstants {
      */
 
     public double getAngle(@MagicConstant(valuesFromClass = CutilConstants.class)int mode) {
-        double rad = Math.atan2(this.y, this.x);
-        return (mode == DEGREES) ? Math.toDegrees(rad) : rad;
+        double rads = Math.atan2(this.y, this.x);
+        return (mode == DEGREES) ? Angle.radsToDec(rads) : rads;
+    }
+
+    public Angle genAngle() {
+        return new Angle(Math.atan2(this.y, this.x), RADIANS);
     }
 
     public Vector2 add(Vector2 v) {
@@ -52,8 +54,7 @@ public class Vector2 implements CutilConstants {
         return "Vector2{" +
                 "(" + x +
                 ", " + y +
-                "), Angle: [Rads: " + Math.trunc(angRads) +
-                ", Degs: " + Math.trunc(angDegs) +
+                "), Angle: [" + angle +
                 "]}";
     }
 }
