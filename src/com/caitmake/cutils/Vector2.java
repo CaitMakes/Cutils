@@ -2,7 +2,7 @@ package com.caitmake.cutils;
 
 import org.intellij.lang.annotations.MagicConstant;
 
-@SuppressWarnings({"unused"})
+@SuppressWarnings({"unused", "CommentedOutCode"})
 public class Vector2 implements CutilConstants {
     public double x;
     public double y;

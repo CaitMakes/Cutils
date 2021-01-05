@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="Cutils:jar">
+  <artifact type="jar" build-on-make="true" name="Cutils:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/Cutils_jar</output-path>
     <root id="archive" name="Cutils.jar">
       <element id="module-output" name="Cutils" />
