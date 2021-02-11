@@ -1,9 +1,9 @@
-package com.caitmake.cutils;
+package com.lyramakes.lutils;
 
 import org.intellij.lang.annotations.MagicConstant;
 
 @SuppressWarnings({"unused", "CommentedOutCode"})
-public class Vector2 implements CutilConstants {
+public class Vector2 implements LutilConstants {
     public double x;
     public double y;
 
@@ -32,7 +32,7 @@ public class Vector2 implements CutilConstants {
      * @return angle
      */
 
-    public double getAngle(@MagicConstant(valuesFromClass = CutilConstants.class)int mode) {
+    public double getAngle(@MagicConstant(valuesFromClass = LutilConstants.class)int mode) {
         double rads = Math.atan2(this.y, this.x);
         return (mode == DEGREES) ? Angle.radsToDec(rads) : rads;
     }

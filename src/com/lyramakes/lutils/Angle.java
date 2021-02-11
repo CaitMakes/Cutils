@@ -1,10 +1,10 @@
-package com.caitmake.cutils;
+package com.lyramakes.lutils;
 
 import org.intellij.lang.annotations.MagicConstant;
 
 import java.util.Objects;
 
-public class Angle implements CutilConstants {
+public class Angle implements LutilConstants {
     public double measure;
     private int mode;
 
@@ -13,12 +13,12 @@ public class Angle implements CutilConstants {
         mode = DEGREES;
     }
 
-    public Angle(double m, @MagicConstant(valuesFromClass = CutilConstants.class)int t) {
+    public Angle(double m, @MagicConstant(valuesFromClass = LutilConstants.class)int t) {
         measure = (t == RADIANS) ? m : Math.toRadians(m);
         mode = t;
     }
 
-    public double getMeasure(@MagicConstant(valuesFromClass = CutilConstants.class)int t) {
+    public double getMeasure(@MagicConstant(valuesFromClass = LutilConstants.class)int t) {
         return (mode == DEGREES) ? radsToDec(measure) : measure;
     }
 
